@@ -1,5 +1,6 @@
 import React from 'react';
-import { AllPeople, Person } from './All-people';
+import { Person } from './All-people';
+
 
 
 class FindPerson extends React.Component {
@@ -28,7 +29,7 @@ class FindPerson extends React.Component {
                 <input type="text" id="name-inp" />
                 <button onClick={() => this.findPerson()}>Find</button>
                 
-                    <Person name={this.state.foundperson.name} number={this.state.foundperson.phonenumber}/>
+                    <Person name={this.state.foundperson.name} number={this.state.foundperson.phonenumber}></Person>
                 
             </div>
         )

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AllPeople, Person } from './All-people';
 
+
 class Addperson extends React.Component {
 
     constructor(props) {
@@ -13,7 +14,7 @@ class Addperson extends React.Component {
     addperson() {
         
         const n = document.getElementById("add-name-inp").value;
-        const pn = document.getElementById("phoneNumber-inp").value;
+        const pn = document.getElementById("add-phoneNumber-inp").value;
 
         console.log("name: ", n)
 
@@ -30,7 +31,7 @@ class Addperson extends React.Component {
         return (
             <div className="Addperson">
                 <h4>Add person</h4>
-                <input type="text" id="add-name-inp" /> <input type="number" id="phoneNumber-inp" />
+                <input type="text" id="add-name-inp" /> <input type="number" id="add-phoneNumber-inp" />
                 <button onClick={() => this.addperson()}>Add</button>
             </div>
         )

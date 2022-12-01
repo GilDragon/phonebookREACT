@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 class AllPeople extends React.Component {
     constructor(props) {
         super(props);
@@ -14,14 +15,16 @@ class AllPeople extends React.Component {
             //.then((res) => console.log(res));
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))
             .then((res)=> this.setState({people: res}))
+            
     }
+    
     renderPerson(name, phonenumber) {
         return <Person name={name} number={phonenumber} key={phonenumber}/>
     }
     render() {
         return (
             <div className="Allpeople">
-                <h2>All People</h2>
+                <h2>All Contacts</h2>
                 <button onClick={() => this.GetAllPeople()}>Get All</button>
                 {
                     this.state.people !== null ? 
@@ -30,9 +33,7 @@ class AllPeople extends React.Component {
                     
                 
                     }
-                <Person name="Bob-test" number="13246579" />
-                <Person name="ElLua" number="12303469" />
-                    //Wow//~_~
+
 
             </div>
         )
