@@ -7,20 +7,18 @@ class Addperson extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Addperson: {id: "Not Found", first_name: "NOT FOUND", last_name: "NOT FOUND"}
+            Addperson: { name: "NOT FOUND", contactNumber: "NOT FOUND"}
         }
     }
 
     addperson() {
-        
-        const id = document.getElementById("add-id-inp").value;
-        const fn = document.getElementById("add-first_name-inp").value;
-        const ln = document.getElementById("add-last_name-inp").value;
+    
+        const n = document.getElementById("add-name-inp").value;
+        const cn = document.getElementById("add-contactNumber-inp").value;
 
-        console.log("Id: ", id)
 
         fetch("http://localhost:5178/contact"
-        + new URLSearchParams({id: id, first_name: fn, last_name: ln}))
+        + new URLSearchParams({ name: n, contactNumber: cn}))
         //.then((result)=> result.json()) //json
         //.then((res)=> res !== null? this.setState({Addperson: res}) : {name: "Not Found ", phone: 0})
             //.then((res) => console.log(res));
@@ -32,7 +30,7 @@ class Addperson extends React.Component {
         return (
             <div className="Addperson">
                 <h4>Add person</h4>
-                <input type="number" id="add-id-inp" /> <input type="text" fn="add-first_name-inp" /> <input type="text" ln="add-last_name-inp" />
+                     <input type="text" n="add-name-inp" /> <input type="text" cn="add-contactNumber-inp" />
                 <button onClick={() => this.addperson()}>Add</button>
             </div>
         )
