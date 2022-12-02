@@ -10,7 +10,7 @@ class AllPeople extends React.Component {
         }
     }
     GetAllPeople() {
-        fetch("https://kanganphonebookapi.azurewebsites.net/contacts")
+        fetch("http://localhost:5178/contacts")
             .then((result) => result.json())
             //.then((res) => console.log(res));
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))

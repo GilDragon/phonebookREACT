@@ -26,7 +26,7 @@ function App() {
 function Layout() {
   return (
     <div className="App">
-            <header style={{ background: 'lightgray', padding: 16, fontSize: 24 }}>
+            <header style={{ background: 'orange', padding: 16, fontSize: 24 }}>
         PhoneBook
 
         <nav>
@@ -43,6 +43,7 @@ function Layout() {
           Add Contact
         </NavLink>
       </nav>
+      
 
       </header>
 
