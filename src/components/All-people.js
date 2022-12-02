@@ -18,8 +18,8 @@ class AllPeople extends React.Component {
             
     }
     
-    renderPerson(id, first_name, last_name) {
-        return <Person id={id} first_name={first_name} last_name={last_name} key={id}/>
+    renderPerson(id, name, contact_number) {
+        return <Person id={id} name={name} contact_number={contact_number} key={id}/>
     }
     render() {
         return (
@@ -28,7 +28,7 @@ class AllPeople extends React.Component {
                 <button onClick={() => this.GetAllPeople()}>Get All</button>
                 {
                     this.state.people !== null ? 
-                    this.state.people.map((person) => this.renderPerson(person.id, person.first_name, person.last_name)) 
+                    this.state.people.map((person) => this.renderPerson(person.id, person.name, person.contact_number)) 
                         : <div></div>
                     
                 
@@ -41,7 +41,7 @@ class AllPeople extends React.Component {
 }
 class Person extends React.Component {
     render() {
-        return <li>{this.props.Id} {this.props.FirstName} {this.props.LastName}</li>
+        return <li>{this.props.id} {this.props.name} {this.props.contact_number}</li>
     }
 }
 
