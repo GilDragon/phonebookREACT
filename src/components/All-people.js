@@ -10,7 +10,7 @@ class AllPeople extends React.Component {
         }
     }
     GetAllPeople() {
-        fetch("http://localhost:5178/GetAll")
+        fetch("https://kanganphonebookapi.azurewebsites.net/contacts")
             .then((result) => result.json())
             //.then((res) => console.log(res));
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))
@@ -18,8 +18,8 @@ class AllPeople extends React.Component {
             
     }
     
-    renderPerson(name, phonenumber) {
-        return <Person name={name} number={phonenumber} key={phonenumber}/>
+    renderPerson(id, first_name, last_name) {
+        return <Person id={id} first_name={first_name} last_name={last_name} key={id}/>
     }
     render() {
         return (
@@ -28,7 +28,7 @@ class AllPeople extends React.Component {
                 <button onClick={() => this.GetAllPeople()}>Get All</button>
                 {
                     this.state.people !== null ? 
-                    this.state.people.map((person) => this.renderPerson(person.name, person.phonenumber)) 
+                    this.state.people.map((person) => this.renderPerson(person.id, person.first_name, person.last_name)) 
                         : <div></div>
                     
                 
@@ -41,7 +41,7 @@ class AllPeople extends React.Component {
 }
 class Person extends React.Component {
     render() {
-        return <li>{this.props.name} {this.props.number}</li>
+        return <li>{this.props.Id} {this.props.FirstName} {this.props.LastName}</li>
     }
 }
 

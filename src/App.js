@@ -7,7 +7,6 @@ import { Addperson } from './components/Add-person';
 
 
 
-
 function App() {
   return (
   
@@ -27,22 +26,26 @@ function App() {
 function Layout() {
   return (
     <div className="App">
-    <h1>PhoneBook</h1>
-      <nav>
+            <header style={{ background: 'lightgray', padding: 16, fontSize: 24 }}>
+        PhoneBook
+
+        <nav>
+
           <NavLink to="/all" element={<AllPeople />}>
             List all Contacts
           </NavLink>
-      </nav>
-      <nav>
+
           <NavLink to="/FindPerson" element={<FindPerson />}>
             Find Contact
           </NavLink>
-      </nav>
-      <nav>
-        <NavLink to="/addperson" element={<Addperson />}>
+          
+          <NavLink to="/addperson" element={<Addperson />}>
           Add Contact
         </NavLink>
       </nav>
+
+      </header>
+
    <main>
     <Outlet />
   </main>
