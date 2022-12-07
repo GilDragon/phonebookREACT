@@ -23,19 +23,19 @@ class AllPeople extends React.Component {
     }
     render() {
         return (
-            <div className="Allpeople">
+            <div1 className="Allpeople">
                 <h2>All Contacts</h2>
                 <button onClick={() => this.GetAllPeople()}>Get All</button>
                 {
                     this.state.people !== null ? 
                     this.state.people.map((person) => this.renderPerson(person.id, person.name, person.contactNumber)) 
-                        : <div></div>
+                        : <div1></div1>
                     
                 
                     }
 
 
-            </div>
+            </div1>
         )
     }
 }

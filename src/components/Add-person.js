@@ -3,11 +3,11 @@ import { AllPeople, Person } from './All-people';
 
 
 class Addperson extends React.Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
-            Addperson: { name: "NOT FOUND", contactNumber: "NOT FOUND"}
+            Addperson: { name: "Enter any name", contactNumber: "Enter any number"}
         }
     }
 
@@ -17,7 +17,7 @@ class Addperson extends React.Component {
         const cn = document.getElementById("add-contactNumber-inp").value;
 
 
-        fetch("http://localhost:5178/contact"
+        fetch("http://localhost:5178/ADD?????????"
         + new URLSearchParams({ name: n, contactNumber: cn}))
         //.then((result)=> result.json()) //json
         //.then((res)=> res !== null? this.setState({Addperson: res}) : {name: "Not Found ", phone: 0})
@@ -28,11 +28,11 @@ class Addperson extends React.Component {
 
     render() {
         return (
-            <div className="Addperson">
+            <div1 className="Addperson">
                 <h4>Add person</h4>
                      <input type="text" n="add-name-inp" /> <input type="text" cn="add-contactNumber-inp" />
                 <button onClick={() => this.addperson()}>Add</button>
-            </div>
+            </div1>
         )
     }
 }

@@ -3,8 +3,7 @@ import './App.css';
 import { AllPeople } from './components/All-people';
 import { FindPerson } from './components/find-person';
 import { Addperson } from './components/Add-person';
-
-
+import image from './components/image/kangan_logo2.png';
 
 
 function App() {
@@ -23,29 +22,33 @@ function App() {
   );
 }
 
+
 function Layout() {
+
   return (
-    <div className="App">
-            <header style={{ background: 'orange', padding: 16, fontSize: 24 }}>
+
+    <div className="App" style={{ backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize: 200}}>
+            <header style={{ padding: 16, fontSize: 25 }}>
+              <h1>
         PhoneBook
+        </h1>
+        <nav style={{ width: '100%', margin: '30px 0 0 30px', fontSize: 24}}>
 
-        <nav>
-
-          <NavLink to="/all" element={<AllPeople />}>
+          <NavLink to="/all" element={<AllPeople />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'darkcyan'}} >
             List all Contacts
           </NavLink>
 
-          <NavLink to="/FindPerson" element={<FindPerson />}>
+          <NavLink to="/FindPerson" element={<FindPerson />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'blueviolet'}}>
             Find Contact
           </NavLink>
           
-          <NavLink to="/addperson" element={<Addperson />}>
+          <NavLink to="/addperson" element={<Addperson />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'blue'}}>
           Add Contact
         </NavLink>
       </nav>
-      
 
       </header>
+      
 
    <main>
     <Outlet />

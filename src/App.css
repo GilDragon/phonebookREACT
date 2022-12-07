@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: -moz-linear-gradient();
 }
 
 
@@ -16,9 +17,25 @@
 
 
 .Allpeople {
-  border: solid 1px;
+  border: solid px;
 }
 
 .FindPerson {
-  border: solid 1px;
+  border: solid px;
+}
+.Addperson {
+  border: solid px;
+}
+div1 {
+  color: rgb(78, 140, 182);
+  background: rgba(218, 218, 0, 0.3);
+}
+h1 {
+  color:rgb(75, 26, 29);
+
+}
+div {
+
+  background: rgba(218, 218, 0, 0.3);
+
 }
