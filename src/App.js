@@ -27,7 +27,7 @@ function Layout() {
 
   return (
 
-    <div className="App" style={{ backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize: 200}}>
+    <div className="App" style={{ backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize: 180}}>
             <header style={{ padding: 16, fontSize: 25 }}>
               <h1>
         PhoneBook
