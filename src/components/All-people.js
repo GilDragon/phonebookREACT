@@ -39,7 +39,7 @@ class AllPeople extends React.Component {
 }
 class Person extends React.Component {
     render() {
-        return <li> {this.props.name} {this.props.contactNumber}</li>
+        return <li> {this.props.id} {this.props.name} {this.props.contactNumber} </li>
     }
 }
 

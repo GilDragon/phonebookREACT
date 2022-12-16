@@ -3,6 +3,7 @@ import './App.css';
 import { AllPeople } from './components/All-people';
 import { FindPerson } from './components/find-person';
 import { Addperson } from './components/Add-person';
+import { Deletecontact } from './components/Delete-contact';
 import image from './components/image/kangan_logo2.png';
 
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="all" element={<AllPeople />} />
           <Route path="findperson" element={<FindPerson />} />
           <Route path="addperson" element={<Addperson />} />
+          <Route path="deletecontact" element={<Deletecontact />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Route>
       </Routes>
@@ -44,6 +46,9 @@ function Layout() {
           
           <NavLink to="/addperson" element={<Addperson />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'blue'}}>
           Add Contact
+        </NavLink>
+        <NavLink to="/deletecontact" element={<Deletecontact />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'yellowgreen'}}>
+          Delete contact
         </NavLink>
       </nav>
 
