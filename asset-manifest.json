@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/phonebookREACT/static/css/main.3f976e18.css",
-    "main.js": "/phonebookREACT/static/js/main.e11c4813.js",
+    "main.js": "/phonebookREACT/static/js/main.3e4ce726.js",
     "static/media/kangan_logo2.png": "/phonebookREACT/static/media/kangan_logo2.4b278e6c67870d3e7239.png",
     "index.html": "/phonebookREACT/index.html",
     "main.3f976e18.css.map": "/phonebookREACT/static/css/main.3f976e18.css.map",
-    "main.e11c4813.js.map": "/phonebookREACT/static/js/main.e11c4813.js.map"
+    "main.3e4ce726.js.map": "/phonebookREACT/static/js/main.3e4ce726.js.map"
   },
   "entrypoints": [
     "static/css/main.3f976e18.css",
-    "static/js/main.e11c4813.js"
+    "static/js/main.3e4ce726.js"
   ]
 }
