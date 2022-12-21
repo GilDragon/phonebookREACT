@@ -47,7 +47,7 @@ class Addperson extends React.Component {
                 <button onClick={() => this.addperson()}>Add</button>
                 <div style={{padding: "10px", color: 'purple', fontWeight: 'bold'}}>Enter First name, Last name and Contact number (EX) Gilsoo Park 0421971531</div>
             </div>
-            // if the id-name and id-number goes into database successfully return new contact has been added 
+            // if the id-name and id-number goes into database successfully return new contact has been added
         )
     }
 }
