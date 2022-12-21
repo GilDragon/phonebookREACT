@@ -32,7 +32,7 @@ class Deletecontact extends React.Component {
                 <div 
                 style={{color: 'red', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
                     Enter the id that you
-                <b> loathe</b>
+                <b> In number</b>
                 {
                 //    this.state.Deletecontact === 0 ?
                 //        console.log("No contact found") :
