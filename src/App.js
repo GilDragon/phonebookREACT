@@ -1,4 +1,4 @@
-import { Outlet, NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Outlet, NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AllPeople } from './components/All-people';
 import { FindPerson } from './components/find-person';
