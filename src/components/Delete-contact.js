@@ -10,7 +10,7 @@ class Deletecontact extends React.Component {
     }
     
     deleteid() {
-        const id = document.getElementById("searchTerm-inp").value;
+        const id = document.getElementById("id-inp").value;
 
         fetch("https://kanganphonebookapi.azurewebsites.net/contact?"
         + new URLSearchParams({id: id}), {method: 'DELETE'}
@@ -27,7 +27,7 @@ class Deletecontact extends React.Component {
         return (
             <div className="Deletecontact">
                 <h4>Delete a contact</h4>
-                    <input type="number" id="searchTerm-inp" />
+                    <input type="number" id="id-inp" />
                 <button onClick={() => this.deleteid()}>Delete</button>
                 <div 
                 style={{color: 'red', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
