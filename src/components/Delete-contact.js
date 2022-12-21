@@ -34,9 +34,9 @@ class Deletecontact extends React.Component {
                     Enter the id that you
                 <b> loathe</b>
                 {
-                    this.state.Deletecontact === 0 ?
-                        console.log("No contact found") :
-                        console.log("the contact has been deleted")
+                //    this.state.Deletecontact === 0 ?
+                //        console.log("No contact found") :
+                //        console.log("the contact has been deleted")
                 }
                 </div>
             </div>
