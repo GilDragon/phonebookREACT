@@ -31,7 +31,7 @@ class Deletecontact extends React.Component {
                 <button onClick={() => this.deleteid()}>Delete</button>
                 <div 
                 style={{color: 'red', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
-                    Enter the id that you
+                    Enter the id
                 <b> In number</b>
                 {
                 //    this.state.Deletecontact === 0 ?
