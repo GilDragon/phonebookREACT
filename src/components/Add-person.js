@@ -28,6 +28,7 @@ class Addperson extends React.Component {
                 body: JSON.stringify(newContact)
             })
             .then(res => console.log(res))
+
                 
         //+ new URLSearchParams({ addName: n, addNumber: an }))
         //.then(response => response.json())
@@ -39,13 +40,16 @@ class Addperson extends React.Component {
     }
 
     render() {
+
         return (
             <div className="Addperson">
                 <h4>Add person</h4>
                      <input type="text" id="add-addName-inp" /> <input type="text" id="add-addNumber-inp" />
+                     
                 <button onClick={() => this.addperson()}>Add</button>
                 <div style={{padding: "10px", color: 'purple', fontWeight: 'bold'}}>Enter First name, Last name and Contact number (EX) Gilsoo Park 0421971531</div>
             </div>
+            
             // if the id-name and id-number goes into database successfully return new contact has been added
         )
     }
