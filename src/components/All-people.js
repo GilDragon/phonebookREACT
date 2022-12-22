@@ -9,6 +9,11 @@ class AllPeople extends React.Component {
             people: null
         }
     }
+
+    componentDidMount() {
+        this.GetAllPeople();
+    }
+
     GetAllPeople() {
         fetch("https://kanganphonebookapi.azurewebsites.net/contacts")
             .then((result) => result.json())
