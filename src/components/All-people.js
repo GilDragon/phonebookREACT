@@ -15,7 +15,7 @@ class AllPeople extends React.Component {
     }
 
     GetAllPeople() {
-        fetch("https://kanganphonebookapi.azurewebsites.net/contacts")
+        fetch("https://kanganphonebookapi.azurewebsites.net/all")
             .then((result) => result.json())
             //.then((res) => console.log(res));
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))
