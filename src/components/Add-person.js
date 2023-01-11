@@ -21,7 +21,7 @@ class Addperson extends React.Component {
 
         const newContact = { name: n, contactNumber: an}
 
-        fetch("https://kanganphonebookapi.azurewebsites.net/addperson",
+        fetch("https://kanganphonebookapi.azurewebsites.net/contact?",
             {
                 headers: { "Content-Type": "application/json" },
                 method: 'POST',

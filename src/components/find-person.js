@@ -26,7 +26,7 @@ class FindPerson extends React.Component {
 
     findPerson() {
         const name = document.getElementById("searchTerm-inp").value;
-        fetch("https://kanganphonebookapi.azurewebsites.net/FindPerson"
+        fetch("https://kanganphonebookapi.azurewebsites.net/contact?"
         + new URLSearchParams({searchTerm: name}))
             .then((result)=> result.json())
             //.then((res)=> res !== null? this.setState({foundperson: res}) : {id: "Not Found ", name: "NOT FOUND", contactNumber: "NOT FOUND"}) //set

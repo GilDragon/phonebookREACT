@@ -12,7 +12,7 @@ class Deletecontact extends React.Component {
     deleteid() {
         const id = document.getElementById("id-inp").value;
 
-        fetch("https://kanganphonebookapi.azurewebsites.net/deletecontact"
+        fetch("https://kanganphonebookapi.azurewebsites.net/contact?"
         + new URLSearchParams({id: id}), {method: 'DELETE'}
         )
         //.then(response => response.json())
