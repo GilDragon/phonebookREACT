@@ -4,7 +4,9 @@ import { Person } from './All-people';
 
 
 
+
 class FindPerson extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +27,8 @@ class FindPerson extends React.Component {
 
 
     findPerson() {
-        const name = document.getElementById("searchTerm-inp").value;
+        
+        const name = (document.getElementById("searchTerm-inp").value).replace(/\s{2,}/g, " ").trim();
         fetch("https://kanganphonebookapi.azurewebsites.net/contact?"
         + new URLSearchParams({searchTerm: name}))
             .then((result)=> result.json())
@@ -35,11 +38,12 @@ class FindPerson extends React.Component {
             //Add name to searchTerm so we can search whatever user's inputs in database 
             
     }
+
    
     render() {
         //const { foundresult, userInput } = this.state;
         //const matchvalue = foundresult.filter((foundresult) => foundresult.name.toLowerCase().includes(userInput));
- 
+
         return (
             <div className="FindPerson">
                 <h3>Find a person</h3>
@@ -47,7 +51,7 @@ class FindPerson extends React.Component {
                 <button onClick={() => this.findPerson()}>Find</button> 
 
                 {
-                    this.state.foundresult.length === 0 ?
+                    this.state.foundresult.length === null ?
                         console.log("No people found", this.state.foundresult) :
                         this.state.foundresult.map((foundperson) => 
                         this.renderPerson(foundperson.id, foundperson.name, foundperson.contactNumber))                           
