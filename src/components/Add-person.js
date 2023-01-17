@@ -62,7 +62,7 @@ class Addperson extends React.Component {
                     <div>
                     {
                         this.state.Addperson === null ?
-                        <b>Name or contact number have to be added</b>: 
+                        <b>Name or contact number has to be added</b>: 
                         <b>A contact has been added</b>
 
                     }
