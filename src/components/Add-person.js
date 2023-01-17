@@ -18,10 +18,16 @@ class Addperson extends React.Component {
         //method: 'POST',
         //header: { 'Content-Type': 'application/json' },
         //body: JSON.stringify({ title: 'react POST request example' })
+        if(n === "" || an === "") 
+        {
+            console.log("Name or contact number have to be added")
+
+            return (
+                <b>Name or contact number have to be added</b>
+            );}
 
         const newContact = { name: n, contactNumber: an}
-        if(n === "" || an === "")
-        return;
+
         fetch("https://kanganphonebookapi.azurewebsites.net/contact?",
             {
                 headers: { "Content-Type": "application/json" },
@@ -56,8 +62,7 @@ class Addperson extends React.Component {
                     <div>
                     {
                         this.state.Addperson === null ?
-                        <></>: this.state.Addperson === null ?
-                            "Name or Phone number have to be filled" : <b>A contact has been added</b>
+                        <></>: <b>A contact has been added</b>
 
                     }
                 </div>
