@@ -23,7 +23,7 @@ class Addperson extends React.Component {
             console.log("Name or contact number have to be added")
 
             return (
-                <b>Name or contact number have to be added</b>
+                <div><b>Name or contact number have to be added</b></div>
             );}
 
         const newContact = { name: n, contactNumber: an}
@@ -62,7 +62,8 @@ class Addperson extends React.Component {
                     <div>
                     {
                         this.state.Addperson === null ?
-                        <></>: <b>A contact has been added</b>
+                        <b>Name or contact number have to be added</b>: 
+                        <b>A contact has been added</b>
 
                     }
                 </div>
