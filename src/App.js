@@ -4,7 +4,12 @@ import { AllPeople } from './components/All-people';
 import { FindPerson } from './components/find-person';
 import { Addperson } from './components/Add-person';
 import { Deletecontact } from './components/Delete-contact';
-import image from './components/image/kangan_logo2.png';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+
 
 
 function App() {
@@ -29,31 +34,52 @@ function Layout() {
 
   return (
 
-    <div className="App" style={{ backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", backgroundSize: 180}}>
+    <div className="App">
             <header style={{ padding: 16, fontSize: 25 }}>
-              <h1>
+
+        <nav style={{ width: '100%', margin: '30px 0 0 30px', fontSize: 24}}>
+        <AppBar position= "static">
+        <Container maxWidth= "lg">
+        <h1>
         PhoneBook
         </h1>
-        <nav style={{ width: '100%', margin: '30px 0 0 30px', fontSize: 24}}>
-
-          <NavLink to="/all" element={<AllPeople />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'darkcyan'}} >
+        <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'khaki',
+              textDecoration: 'none',
+            }}
+          >
+            Kangan
+          </Typography>
+        <Button variant="contained"><NavLink to="/all" element={<AllPeople />} style={{color: 'white'}} >
             List all Contacts
-          </NavLink>
+          </NavLink></Button>
 
-          <NavLink to="/FindPerson" element={<FindPerson />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'blueviolet'}}>
+          <Button variant="contained"><NavLink to="/FindPerson" element={<FindPerson />} style={{color: 'white'}} >
             Find Contact
-          </NavLink>
+          </NavLink></Button>
           
-          <NavLink to="/addperson" element={<Addperson />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'blue'}}>
+          <Button variant="contained"><NavLink to="/addperson" element={<Addperson />} style={{color: 'white'}} >
           Add Contact
-        </NavLink>
-        <NavLink to="/deletecontact" element={<Deletecontact />} style={{ width: '100%', margin: '30px 0 0 30px', color: 'yellowgreen'}}>
+        </NavLink></Button>
+        <Button variant="contained"><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
           Delete contact
-        </NavLink>
+        </NavLink></Button>
+
+      </Container>
+        </AppBar>
       </nav>
 
       </header>
-      
 
    <main>
     <Outlet />
