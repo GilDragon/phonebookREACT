@@ -4,6 +4,7 @@ import { AllPeople } from './components/All-people';
 import { FindPerson } from './components/find-person';
 import { Addperson } from './components/Add-person';
 import { Deletecontact } from './components/Delete-contact';
+import { Updatecontact } from './components/Edit-Contact';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
@@ -22,6 +23,7 @@ function App() {
           <Route path="findperson" element={<FindPerson />} />
           <Route path="addperson" element={<Addperson />} />
           <Route path="deletecontact" element={<Deletecontact />} />
+          <Route path="updatecontact" element={<Updatecontact />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Route>
       </Routes>
@@ -64,7 +66,7 @@ function Layout() {
             List all Contacts
           </NavLink></Button>
 
-          <Button variant="contained"><NavLink to="/FindPerson" element={<FindPerson />} style={{color: 'white'}} >
+          <Button variant="contained"><NavLink to="/findperson" element={<FindPerson />} style={{color: 'white'}} >
             Find Contact
           </NavLink></Button>
           
@@ -73,6 +75,9 @@ function Layout() {
         </NavLink></Button>
         <Button variant="contained"><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
           Delete contact
+        </NavLink></Button>
+        <Button variant="contained"><NavLink to="/updatecontact" element={<Updatecontact />} style={{color: 'white'}} >
+          Update contact
         </NavLink></Button>
 
       </Container>
