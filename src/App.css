@@ -1,18 +1,9 @@
 .App {
   text-align: center;
-  background-image: -moz-linear-gradient();
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(18, 18, 18);
+.Updatecontact {
+  text-align: center;
 }
 
 
@@ -28,11 +19,11 @@
 }
 
 h1 {
-  color:rgb(220, 81, 17);
+  color:rgb(213, 224, 48);
 
 }
 div {
 
-  background: rgba(22, 172, 198, 0.3);
+  background: rgba(189, 228, 241, 0.3);
 
 }

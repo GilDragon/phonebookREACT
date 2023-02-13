@@ -1,5 +1,4 @@
 import React from 'react';
-import { Person } from './All-people';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 
@@ -19,7 +18,7 @@ const listofcontacts = [
         editable: true,
     },
 ];
-
+//make FIndPerson component, inside of it set foundresult as new array
 class FindPerson extends React.Component {
 
     constructor(props) {
@@ -30,12 +29,9 @@ class FindPerson extends React.Component {
     }
     // 요기는 foundresult 라는 array를 만듦 이름이 중복 될수 있으니까 make foudresult Array for multiple results
 
-    renderPerson(id, name, contactNumber) {
-        console.log(id, name, contactNumber)
-        return <Person id={id} name={name} contactNumber={contactNumber} key={id} />
-    }
 
-
+// when findPerson function is operated, get a Id from "searchTerm-inp" 
+//fetch to below url then send a searchTerm which I set as name then get a result then foundresult will be set again
     findPerson() {
 
         const name = (document.getElementById("searchTerm-inp").value).replace(/\s{2,}/g, " ").trim();
@@ -48,12 +44,8 @@ class FindPerson extends React.Component {
         //Add name to searchTerm so we can search whatever user's inputs in database 
 
     }
-    //onButtonClickHandler = () => {
-    //    this.state.foundresult.length === 0 ?
-    //        <b>Nothing has found</b> :
-    //        this.state.foundresult.map((foundperson) =>
-    //            this.renderPerson(foundperson.id, foundperson.name, foundperson.contactNumber))
-    //}
+
+
     DisplayDataGrid() {
         return (               
             <Box sx={{ height: 400, width: '100%' }}>
@@ -74,6 +66,7 @@ class FindPerson extends React.Component {
             </Box>
         )
     }
+    // when foundresult's length is not 0 then it shows displaydataGrid
     render() {
 
         return (

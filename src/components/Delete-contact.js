@@ -8,7 +8,7 @@ class Deletecontact extends React.Component {
             Deletecontact: null
         }
     }
-    
+    //in deleteid function set Id for searching parameter called id
     deleteid() {
         const id = document.getElementById("id-inp").value;
 
@@ -23,7 +23,7 @@ class Deletecontact extends React.Component {
 
     render() {
         
-
+// when button is clicked 
         return (
             <div className="Deletecontact">
                 <h4>Delete a contact</h4>

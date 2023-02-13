@@ -9,7 +9,7 @@ class Addperson extends React.Component {
             Addperson: null
         }
     }
-
+// set IDs for addname and addnumber as n and an
     addperson() {
         
         const n = document.getElementById("add-addName-inp").value;
@@ -18,6 +18,7 @@ class Addperson extends React.Component {
         //method: 'POST',
         //header: { 'Content-Type': 'application/json' },
         //body: JSON.stringify({ title: 'react POST request example' })
+        //just in case if any of those are left empty make your ask user to fill it up
         if(n === "" || an === "") 
         {
             console.log("Name or contact number have to be added")
@@ -25,7 +26,8 @@ class Addperson extends React.Component {
             return (
                 <div><b>Name or contact number have to be added</b></div>
             );}
-
+//make new Contact which has name and contacnumber as n and an above
+//fetch with the url address and using POST method push n and an to API to add new contact 
         const newContact = { name: n, contactNumber: an}
 
         fetch("https://kanganphonebookapi.azurewebsites.net/contact?",
@@ -36,7 +38,7 @@ class Addperson extends React.Component {
             })
             .then(r => r.json())
             .then(res => this.setState({Addperson: res}))
-            .then(console.log(this.state.Addperson))
+            //.then(console.log(this.state.Addperson))
             //.then(re => this.setState({n: re}))
             //.then(console.log(this.state.n))
 

@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 
-
+// using Browser Router to load App function
 ReactDOM.render(
   <BrowserRouter>
 
@@ -14,3 +14,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
+// this is entrance file for this app
