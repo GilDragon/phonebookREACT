@@ -56,21 +56,22 @@ const listofcontacts =
                         </p>
                         <p>
                             Name:
-                            <input type="text" name="Name" placeholder='ex)Anh Khan' value={(row.name)}/>
+                            <input type="text" name="Name" placeholder='ex)Anh Khan' defaultValue={(row.name)} />
                         </p>
                         <p>
                             <div>
                                 Contact Number:
-                                <input type="number" name="Contactnumber" placeholder='Contact number' value={row.contactNumber} />
+                                <input type="number" name="Contactnumber" placeholder='Contact number' defaultValue={row.contactNumber} />
                             </div>
                         </p>
 
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" method="PUT"/>
                     </form>
                 </Popup>,
         },
 
     ];
+
 // create Updatecontact component
 //contructor makes the foundresult empty array
 class Updatecontact extends React.Component {
@@ -144,6 +145,22 @@ class Updatecontact extends React.Component {
 
         )
     }
+    //updateContact() {
+    //    let item = {id,name,contactnumber}
+    //    fetch("https://kanganphonebookapi.azurewebsites.net/contact?", {
+    //        method: 'PUT',
+    //        headers: {
+    //            'Accept': 'application/json',
+    //            'Content-Type': 'application/json'
+    //        },
+    //        body: JSON.stringify(item)
+    //        })
+    //        .then((result) => result.json())
+    //        //.then((res)=> res !== null? this.setState({foundperson: res}) : {id: "Not Found ", name: "NOT FOUND", contactNumber: "NOT FOUND"}) //set
+    //        //.then((ren) => console.log(ren));
+    //        //.then(r => r.map((contact) => this.splitnames(contact)))
+    //        .then((res) => this.setState({ foundresult: res }))
+    //}
     //returning the result of the contact 
     render() {
         return (
