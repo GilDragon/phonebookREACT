@@ -1,9 +1,13 @@
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
+import '../App.css';
 
 const listofcontacts = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id',
+     headerName: 'ID',
+      width: 90 
+    },
     {
         field: 'name',
         headerName: 'Name',
@@ -42,9 +46,11 @@ class FindPerson extends React.Component {
             //.then((res) => console.log(res));
             .then((res) => this.setState({ foundresult: res }))
         //Add name to searchTerm so we can search whatever user's inputs in database 
+        if(name === "") {
+            alert('give me some clue to find contact')
+        }
 
     }
-
 
     DisplayDataGrid() {
         return (               
@@ -72,12 +78,12 @@ class FindPerson extends React.Component {
         return (
             <div className="FindPerson">
                 <h3>Find a person</h3>
-                <input type="text" id="searchTerm-inp" />
+                <input type="text" id="searchTerm-inp" required placeholder=''/>
                 <button onClick={() => this.findPerson()}>Find</button>
                 <div>
                     {
-                        this.state.foundresult.length === 0 ?
-                            <b>Nothing has been found</b> :
+                            this.state.foundresult.length === 0 ?
+                            <b></b> :
                             this.DisplayDataGrid()
                     }
                 </div>

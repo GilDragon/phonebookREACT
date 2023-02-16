@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+
 // import all the things above from those directories so that I can use it in App.js
 
 //when App is performed return inside ()
@@ -40,14 +41,20 @@ function Layout() {
 
   return (
 
-    <div className="App">
-            <header style={{ padding: 20, fontSize: 25 }}>
-        <nav style={{ width: '100%', margin: '30px 0 0 30px', fontSize: 24}}>
-        <AppBar position= "static">
+    <div className="App" >
+            <header style={{ padding: 20, fontSize: 25 }} >
+        <nav style={{  width: '100%', margin: '10px 0px 0px 10px', fontSize: 24}}>
+        <AppBar position= "sticky" style={{
+          backgroundColor: 'crimson',
+         color: 'black',
+         opacity: 0.8,
+         boxShadow: "revert-layer"
+          }}>
         <Container maxWidth= "lg">
         <h1>
         PhoneBook
         </h1>
+        <kanganlogo></kanganlogo>
         <Typography
             variant= "h6"
             noWrap
@@ -63,20 +70,20 @@ function Layout() {
               textDecoration: 'none',
             }}
           >
-            Kangan
+
           </Typography>
         <Button variant="contained"><NavLink to="/all" element={<AllPeople />} style={{color: 'white'}} >
             List all Contacts
           </NavLink></Button>
 
-          <Button variant="outlined"><NavLink to="/findperson" element={<FindPerson />} style={{color: 'white'}} >
+          <Button variant="contained"><NavLink to="/findperson" element={<FindPerson />} style={{color: 'white'}} >
             Find Contact
           </NavLink></Button>
           
           <Button variant="contained"><NavLink to="/addperson" element={<Addperson />} style={{color: 'white'}} >
           Add Contact
         </NavLink></Button>
-        <Button variant="outlined"><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
+        <Button variant="contained"><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
           Delete contact
         </NavLink></Button>
         <Button variant="contained"><NavLink to="/updatecontact" element={<Updatecontact />} style={{color: 'white'}} >

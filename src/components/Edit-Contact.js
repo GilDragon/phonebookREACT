@@ -5,7 +5,26 @@ import {
     Button,
 } from '@mui/material';
 import Popup from 'reactjs-popup';
+import '../Edit-Contact.css';
+import '../App.css';
 
+
+
+function put(event) {
+    //let detail = {id: this.state.id, name: this.state.name, contactnumber: this.state.contactNumber}
+    console.log(event)
+    fetch('https://kanganphonebookapi.azurewebsites.net/contact', {
+        method: "PUT",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(event)
+    })
+    .then((result) => console.log(result))
+    //.then((res) => this.setState({ editcontact: res }))
+
+}
 
 
 // make listofcontacts array which has one more column for Edit button which create popup that shows id, name and contact number
@@ -30,7 +49,7 @@ const listofcontacts =
             headerName: 'Contact Number',
             type: 'number',
             width: 150,
-            editable: false,
+            editable: true,
 
         },
         {
@@ -38,34 +57,34 @@ const listofcontacts =
             headerName: "Edit",
             sortable: false,
             renderCell: ({ row }) =>
-                <Popup trigger=<Button onClick={() => this.foundresult(row)}>
+                <Popup trigger=<Button onClick={() => this.foundresult(row)}  style={{backgroundColor: 'lawngreen'}}>
                     Edit
                 </Button>>
 
-                    <form onSubmit={function(e) {
+                    <form class="PopupForm" onSubmit={function(e) {
                         e.preventDefault();
-                    }} method="PUT">
+                    }}>
 
                         <p>
 
                             <div className='Updatecontact'>
                                 id:
-                                <input type="number" name="ID" placeholder='ID' value={row.id} />
+                                <input type="number" name="ID" value={row.id} />
                             </div>
 
                         </p>
                         <p>
                             Name:
-                            <input type="text" name="Name" placeholder='ex)Anh Khan' defaultValue={(row.name)} />
+                            <input id="name" type="text" name="Name" defaultValue={(row.name)} />
                         </p>
                         <p>
                             <div>
                                 Contact Number:
-                                <input type="number" name="Contactnumber" placeholder='Contact number' defaultValue={row.contactNumber} />
+                                <input id="contactNumber" type="number" name="Contactnumber" defaultValue={row.contactNumber} />
                             </div>
                         </p>
 
-                        <input type="submit" value="Submit" method="PUT"/>
+                        <button class="SubButton" onClick={(event) => put({id: row.id, name: document.getElementById("name").value, contactNumber: document.getElementById("contactNumber").value})}> Submit </button>
                     </form>
                 </Popup>,
         },
@@ -102,19 +121,20 @@ class Updatecontact extends React.Component {
         //Add name to searchTerm so we can search whatever user's inputs in database 
     }
     // set lastname as name from foundresult and after space set firstname as name from same place but before space
-    splitnames(foundresult) {
-        const lastname = foundresult.name.slice(foundresult.name.indexOf(' ') + 1);
-        //console.log(foundresult.name.slice(foundresult.name.indexOf(' ')+ 1));
-        const firstname = foundresult.name.slice(0, foundresult.name.indexOf(' '));
-        //console.log(foundresult.name.slice(0, foundresult.name.indexOf(' ')));
-        this.setState({ id: this.state.foundresult.id });
-        this.setState({ name: this.state.foundresult.name });
-        this.setState({ contactNumber: this.state.foundresult.contactNumber });
-        let contact = { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber }
+    //splitnames(foundresult) {
+    //    const lastname = foundresult.name.slice(foundresult.name.indexOf(' ') + 1);
+    //    //console.log(foundresult.name.slice(foundresult.name.indexOf(' ')+ 1));
+    //    const firstname = foundresult.name.slice(0, foundresult.name.indexOf(' '));
+    //    //console.log(foundresult.name.slice(0, foundresult.name.indexOf(' ')));
+    //    this.setState({ id: this.state.foundresult.id });
+    //    this.setState({ name: this.state.foundresult.name });
+    //    this.setState({ contactNumber: this.state.foundresult.contactNumber });
+    //    let contact = { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber }
+//
+    //    return { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber };
+//
+    //}
 
-        return { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber };
-
-    }
     DisplayDataGrid(foundresult) {
 
         return (
@@ -159,18 +179,20 @@ class Updatecontact extends React.Component {
     //        //.then((res)=> res !== null? this.setState({foundperson: res}) : {id: "Not Found ", name: "NOT FOUND", contactNumber: "NOT FOUND"}) //set
     //        //.then((ren) => console.log(ren));
     //        //.then(r => r.map((contact) => this.splitnames(contact)))
-    //        .then((res) => this.setState({ foundresult: res }))
+    //        .then((res) => this.setState({ editnew: res }))
     //}
     //returning the result of the contact 
+    
     render() {
         return (
             <div className="Updatecontact">
                 <h3>Find a person to edit</h3>
-                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)' />
+                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)' required data-validation-required-message="Please enter name"/>
                 <button onClick={() => this.findPerson()}>Find</button>
                 <div>
                     {
                         this.state.foundresult.length === 0 ?
+                            <b></b> : this.state.foundresult.length === 0 ?
                             <b>Nothing has been found</b> :
                             this.DisplayDataGrid()
                     }

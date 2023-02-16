@@ -1,6 +1,7 @@
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
+import '../App.css';
 
 // make listofcontacts array which has id, name and contactnumber field
 const listofcontacts = [
@@ -51,7 +52,7 @@ class AllPeople extends React.Component {
 // in rows get the value from GetAllpeople function, in columns get listofcontacts array
     DisplayDataGrid() {
         return (               
-            <Box sx={{ height: 631, width: '100%' }}>
+            <Box sx={{ height: 631, width: '100%'}}>
             <DataGrid
                 rows={this.state.people}
                 columns={listofcontacts}

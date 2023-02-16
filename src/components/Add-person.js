@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css';
 
 class Addperson extends React.Component {
     
@@ -21,10 +21,10 @@ class Addperson extends React.Component {
         //just in case if any of those are left empty make your ask user to fill it up
         if(n === "" || an === "") 
         {
-            console.log("Name or contact number have to be added")
+            alert("Name or contact number have to be added")
 
             return (
-                <div><b>Name or contact number have to be added</b></div>
+                <div><b>Name or contact number have to be filled</b></div>
             );}
 //make new Contact which has name and contacnumber as n and an above
 //fetch with the url address and using POST method push n and an to API to add new contact 
@@ -57,14 +57,15 @@ class Addperson extends React.Component {
         return (
             <div className="Addperson">
                 <h4>Add person</h4>
-                    <b>Name:</b><input type="text" id="add-addName-inp" /><b>Phone number:</b><input type="number" id="add-addNumber-inp" />
+                    <b>Name:</b><input type="text" id="add-addName-inp" placeholder='ex) Harry Potter' autoComplete="Firstname Lastname"/>
+                    <b>Phone number:</b><input type="number" id="add-addNumber-inp" placeholder='0412345768'/>
                      
                 <button onClick={() => this.addperson()}>Add</button>
-                <div style={{padding: "10px", color: 'purple', fontWeight: 'bold'}}>Enter First name, Last name and Contact number (EX) Gilsoo Park 0421971531</div>
+                <div style={{padding: "10px", color: 'purple', fontWeight: 'bold'}}></div>
                     <div>
                     {
                         this.state.Addperson === null ?
-                        <b>Name or contact number has to be added</b>: 
+                        <></> :
                         <b style={{color: 'blueviolet'}}>A contact has been added</b>
 
                     }

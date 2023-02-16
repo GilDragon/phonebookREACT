@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css';
 
 class Deletecontact extends React.Component {
     constructor(props) {
@@ -26,13 +26,14 @@ class Deletecontact extends React.Component {
 // when button is clicked 
         return (
             <div className="Deletecontact">
+                <body>
                 <h4>Delete a contact</h4>
                     <input type="number" id="id-inp" />
                 <button onClick={() => this.deleteid()}>Delete</button>
                 <div id="result"
-                style={{color: 'red', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
-                    Enter the id
-                <b> In number</b>
+                style={{color: 'brown', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
+                    
+                <b>Enter the ID</b>
                 {
                    this.state.Deletecontact === null ?
                             <></> :
@@ -42,6 +43,7 @@ class Deletecontact extends React.Component {
                                 <div> Contact deleted </div>
                 }
                 </div>
+                </body>
             </div>
         )
     

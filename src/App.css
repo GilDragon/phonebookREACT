@@ -1,29 +1,92 @@
+
 .App {
   text-align: center;
+  background-color: white;
+
 }
 
 .Updatecontact {
-  text-align: center;
+  background-image: url('./components/image/kanganbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 
 .Allpeople {
   border: solid px;
+  background-image: url('./components/image/kanganbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .FindPerson {
   border: solid px;
+  background-image: url('./components/image/kanganbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
+
 .Addperson {
   border: solid px;
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-h1 {
-  color:rgb(213, 224, 48);
-
+.Deletecontact {
+  border: solid px;
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 div {
 
-  background: rgba(189, 228, 241, 0.3);
+  background: rgba(255, 255, 255, 0.144);
 
+}
+
+nav {
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: left;
+  display: block;
+  
+}
+
+kanganlogo {
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: left;
+  display: block;
+  background-size: auto;
+
+  
+}
+
+.PopupForm {
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 300px;
+  background-size: cover;
+  background-position: top;
+  background-position: right;
+  background-blend-mode: difference;
+  border-style: groove;
+  border-color: lightcoral;
+
+}
+
+.PopupForm .SubButton {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom:10px;
+  opacity: 0.8;
 }
