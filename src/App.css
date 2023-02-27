@@ -6,24 +6,24 @@
 }
 
 .Updatecontact {
-  background-image: url('./components/image/kanganbackground.jpg');
+  background-image: url(./components/image/cremorne\ project.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
 }
 
 
 .Allpeople {
   border: solid px;
-  background-image: url('./components/image/kanganbackground.jpg');
+  background-image: url(./components/image/cremorne\ project.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
 }
 
 .FindPerson {
   border: solid px;
-  background-image: url('./components/image/kanganbackground.jpg');
+  background-image: url(./components/image/cremorne\ project.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
 }
 
 .Addperson {
@@ -67,26 +67,65 @@ kanganlogo {
 }
 
 .PopupForm {
-  background-image: url('./components/image/kangan.jpg');
+  background-image: url(https://digitalskillsorg.com.au/content/images/size/w2000/2021/12/Screen-Shot-2021-12-06-at-10.04.43-am.png);
   background-repeat: no-repeat;
   height: 200px;
   width: 300px;
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   background-position: right;
   background-blend-mode: difference;
   border-style: groove;
   border-color: lightcoral;
+  color: rgb(205 174 53);
 
 }
 
 .PopupForm .SubButton {
   background-color: #04AA6D;
   color: white;
-  padding: 16px 20px;
-  border: none;
+  padding: 10px 10px;
+  border-radius: 20%;
   cursor: pointer;
-  width: 40%;
-  margin-bottom:10px;
-  opacity: 0.8;
+  width: 30%;
+  margin: bottom 5px;
+  border: darkviolet;
+  border-style: solid;
+  margin: 10px;
+  height: 20%;
+}
+.PopupForm .closeBtn {
+  background-color: #df434b;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 20%;
+  cursor: pointer;
+  width: 30%;
+  margin: bottom 5px;
+  border: darkviolet;
+  border-style: solid;
+  margin: 10px;
+  height: 20%;
+}
+.App .Bigbtn {
+  font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 16px;
+    border-radius: 100%;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    color: inherit;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    color: #fff;
+    background-color: #1976d2;
+    transition: orange 250ms
+}
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.Bigbtn.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+  background-color: rgb(172, 46, 161);
 }

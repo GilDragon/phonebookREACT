@@ -33,7 +33,7 @@ class AllPeople extends React.Component {
             listofcontacts: [],
         }
     }
-//performs getallPeople
+    //performs getallPeople
 
     componentDidMount() {
         this.GetAllPeople();
@@ -45,27 +45,27 @@ class AllPeople extends React.Component {
             //.then((res) => console.log(res)); Is it storing? or transmitting?
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))
             .then((res) => this.setState({ people: res }))
-            // then set the people from constructor as  
+        // then set the people from constructor as  
 
     }
-//make Displaydatagrid function which can make the datagrid. table this.state.people is a row and columns are listofcontacts
-// in rows get the value from GetAllpeople function, in columns get listofcontacts array
+    //make Displaydatagrid function which can make the datagrid. table this.state.people is a row and columns are listofcontacts
+    // in rows get the value from GetAllpeople function, in columns get listofcontacts array
     DisplayDataGrid() {
-        return (               
-            <Box sx={{ height: 631, width: '100%'}}>
-            <DataGrid
-                rows={this.state.people}
-                columns={listofcontacts}
-                pageSize={10}
-                rowsPerPageOptions={[10]}
-                checkboxSelection
-                disableSelectionOnClick
-                experimentalFeatures={{ newEditingApi: true }}
-            />
+        return (
+            <Box sx={{ height: 631, width: '100%' }}>
+                <DataGrid
+                    rows={this.state.people}
+                    columns={listofcontacts}
+                    pageSize={10}
+                    rowsPerPageOptions={[10]}
+                    checkboxSelection
+                    disableSelectionOnClick
+                    experimentalFeatures={{ newEditingApi: true }}
+                />
             </Box>
         )
     }
-// make rederPerson function which returns id name, contactnumber and key
+    // make rederPerson function which returns id name, contactnumber and key
     renderPerson(id, name, contactNumber) {
         return <Person id={id} name={name} contactNumber={contactNumber} key={id} />
     }
@@ -74,19 +74,22 @@ class AllPeople extends React.Component {
     render() {
 
         return (
-            <div className="Allpeople">
+            <div>
                 <h2>All Contacts</h2>
-                {/* <button onClick={() => this.GetAllPeople()}>Get All</button>
+                <div className="Allpeople">
+
+                    {/* <button onClick={() => this.GetAllPeople()}>Get All</button>
                 {
                     this.state.people !== null ?
                         this.state.people.map((person) => this.renderPerson(person.id, person.name, person.contactNumber))
                         : <div></div>
                 } */}
 
-                { this.state.people != null ? this.DisplayDataGrid() : "No contacts" }
+                    {this.state.people != null ? this.DisplayDataGrid() : "No contacts"}
 
 
 
+                </div>
             </div>
         )
     }

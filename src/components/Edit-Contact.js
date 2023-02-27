@@ -9,7 +9,6 @@ import '../Edit-Contact.css';
 import '../App.css';
 
 
-
 function put(event) {
     //let detail = {id: this.state.id, name: this.state.name, contactnumber: this.state.contactNumber}
     console.log(event)
@@ -17,11 +16,11 @@ function put(event) {
         method: "PUT",
         headers: {
             'Accept': 'application/json',
-            'Content-Type':'application/json'
+            'Content-Type': 'application/json'
         },
-        body:JSON.stringify(event)
+        body: JSON.stringify(event)
     })
-    .then((result) => console.log(result))
+        .then((result) => console.log(result))
     //.then((res) => this.setState({ editcontact: res }))
 
 }
@@ -57,14 +56,22 @@ const listofcontacts =
             headerName: "Edit",
             sortable: false,
             renderCell: ({ row }) =>
-                <Popup trigger=<Button onClick={() => this.foundresult(row)}  style={{backgroundColor: 'lawngreen'}}>
+                <Popup trigger=<Button
+                    onClick={() => this.foundresult(row)}
+                    style={{ backgroundColor: 'lawngreen' }}>
                     Edit
                 </Button>>
 
-                    <form class="PopupForm" onSubmit={function(e) {
-                        e.preventDefault();
-                    }}>
-
+                    <form class="PopupForm" id="Editform"
+                        onSubmit={function (e) {
+                            e.preventDefault();
+                            put({
+                                id: row.id,
+                                name: document.getElementById("name").value,
+                                contactNumber: document.getElementById("contactNumber").value
+                            })
+                        }
+                        } >
                         <p>
 
                             <div className='Updatecontact'>
@@ -84,7 +91,10 @@ const listofcontacts =
                             </div>
                         </p>
 
-                        <button class="SubButton" onClick={(event) => put({id: row.id, name: document.getElementById("name").value, contactNumber: document.getElementById("contactNumber").value})}> Submit </button>
+                        <button className="SubButton" type="submit" > Submit </button>
+                        <p>
+                            <input type="submit"></input>
+                        </p>
                     </form>
                 </Popup>,
         },
@@ -103,9 +113,9 @@ class Updatecontact extends React.Component {
 
     }
 
-    
 
-// same function in find-person get the search param and find the contact
+
+    // same function in find-person get the search param and find the contact
     findPerson() {
 
 
@@ -130,9 +140,9 @@ class Updatecontact extends React.Component {
     //    this.setState({ name: this.state.foundresult.name });
     //    this.setState({ contactNumber: this.state.foundresult.contactNumber });
     //    let contact = { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber }
-//
+    //
     //    return { id: foundresult.id, firstname: firstname, lastname: lastname, contactNumber: foundresult.contactNumber };
-//
+    //
     //}
 
     DisplayDataGrid(foundresult) {
@@ -182,20 +192,24 @@ class Updatecontact extends React.Component {
     //        .then((res) => this.setState({ editnew: res }))
     //}
     //returning the result of the contact 
-    
+
     render() {
         return (
-            <div className="Updatecontact">
+            <div>
                 <h3>Find a person to edit</h3>
-                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)' required data-validation-required-message="Please enter name"/>
+                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)' required data-validation-required-message="Please enter name" />
                 <button onClick={() => this.findPerson()}>Find</button>
-                <div>
-                    {
-                        this.state.foundresult.length === 0 ?
-                            <b></b> : this.state.foundresult.length === 0 ?
-                            <b>Nothing has been found</b> :
-                            this.DisplayDataGrid()
-                    }
+                <div className="Updatecontact">
+
+
+                    <div>
+                        {
+                            this.state.foundresult.length === 0 ?
+                                <b></b> : this.state.foundresult.length === 0 ?
+                                    <b>Nothing has been found</b> :
+                                    this.DisplayDataGrid()
+                        }
+                    </div>
                 </div>
             </div>
 

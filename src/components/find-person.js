@@ -1,12 +1,34 @@
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import Box from '@mui/material/Box';
 import '../App.css';
+import {
+    Box,
+    Button,
+} from '@mui/material';
+import Popup from 'reactjs-popup';
+
+
+function put(event) {
+    //let detail = {id: this.state.id, name: this.state.name, contactnumber: this.state.contactNumber}
+    console.log(event)
+    fetch('https://kanganphonebookapi.azurewebsites.net/contact', {
+        method: "PUT",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(event)
+    })
+        .then((result) => console.log(result))
+    //.then((res) => this.setState({ editcontact: res }))
+
+}
 
 const listofcontacts = [
-    { field: 'id',
-     headerName: 'ID',
-      width: 90 
+    {
+        field: 'id',
+        headerName: 'ID',
+        width: 90
     },
     {
         field: 'name',
@@ -21,6 +43,45 @@ const listofcontacts = [
         width: 150,
         editable: true,
     },
+    {
+        field: "edit",
+        headerName: "Edit",
+        sortable: false,
+        renderCell: ({ row }) =>
+            <Popup trigger=<Button onClick={() => this.foundresult(row)} style={{ backgroundColor: 'lawngreen' }}>
+                Edit
+            </Button>>
+
+                <form class="PopupForm" onSubmit={function (e) {
+                    e.preventDefault();
+                }}>
+
+                    <p>
+
+                        <div className='Updatecontact'>
+                            id:
+                            <input type="number" name="ID" value={row.id} />
+                        </div>
+
+                    </p>
+                    <p>
+                        Name:
+                        <input id="name" type="text" name="Name" defaultValue={(row.name)} />
+                    </p>
+                    <p>
+                        <div>
+                            Contact Number:
+                            <input id="contactNumber" type="number" name="Contactnumber" defaultValue={row.contactNumber} />
+                        </div>
+                    </p>
+
+                    <button class="SubButton" onClick={(event) =>
+                        put({ id: row.id, 
+                        name: document.getElementById("name").value, 
+                        contactNumber: document.getElementById("contactNumber").value })}> Submit </button>
+                </form>
+            </Popup>,
+    },
 ];
 //make FIndPerson component, inside of it set foundresult as new array
 class FindPerson extends React.Component {
@@ -34,8 +95,8 @@ class FindPerson extends React.Component {
     // 요기는 foundresult 라는 array를 만듦 이름이 중복 될수 있으니까 make foudresult Array for multiple results
 
 
-// when findPerson function is operated, get a Id from "searchTerm-inp" 
-//fetch to below url then send a searchTerm which I set as name then get a result then foundresult will be set again
+    // when findPerson function is operated, get a Id from "searchTerm-inp" 
+    //fetch to below url then send a searchTerm which I set as name then get a result then foundresult will be set again
     findPerson() {
 
         const name = (document.getElementById("searchTerm-inp").value).replace(/\s{2,}/g, " ").trim();
@@ -46,29 +107,29 @@ class FindPerson extends React.Component {
             //.then((res) => console.log(res));
             .then((res) => this.setState({ foundresult: res }))
         //Add name to searchTerm so we can search whatever user's inputs in database 
-        if(name === "") {
+        if (name === "") {
             alert('give me some clue to find contact')
         }
 
     }
 
     DisplayDataGrid() {
-        return (               
+        return (
             <Box sx={{ height: 400, width: '100%' }}>
-            <DataGrid
-                initialState={{
-                    sorting: {
-                        sortModel: [{ field: 'id', sort:'asc'}]
-                    }
-                }}
-                rows={this.state.foundresult}
-                columns={listofcontacts}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                checkboxSelection
-                disableSelectionOnClick
-                experimentalFeatures={{ newEditingApi: true }}
-            />
+                <DataGrid
+                    initialState={{
+                        sorting: {
+                            sortModel: [{ field: 'id', sort: 'asc' }]
+                        }
+                    }}
+                    rows={this.state.foundresult}
+                    columns={listofcontacts}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
+                    disableSelectionOnClick
+                    experimentalFeatures={{ newEditingApi: true }}
+                />
             </Box>
         )
     }
@@ -76,18 +137,21 @@ class FindPerson extends React.Component {
     render() {
 
         return (
-            <div className="FindPerson">
+            <div>
                 <h3>Find a person</h3>
-                <input type="text" id="searchTerm-inp" required placeholder=''/>
+                <input type="text" id="searchTerm-inp" required placeholder='' />
                 <button onClick={() => this.findPerson()}>Find</button>
-                <div>
-                    {
+                <div className="FindPerson">
+
+                    <div>
+                        {
                             this.state.foundresult.length === 0 ?
-                            <b></b> :
-                            this.DisplayDataGrid()
-                    }
-                </div>
-                <div>
+                                <b></b> :
+                                this.DisplayDataGrid()
+                        }
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
 

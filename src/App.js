@@ -46,7 +46,7 @@ function Layout() {
         <nav style={{  width: '100%', margin: '10px 0px 0px 10px', fontSize: 24}}>
         <AppBar position= "sticky" style={{
           backgroundColor: 'crimson',
-         color: 'black',
+         color: '#5470a0',
          opacity: 0.8,
          boxShadow: "revert-layer"
           }}>
@@ -54,7 +54,7 @@ function Layout() {
         <h1>
         PhoneBook
         </h1>
-        <kanganlogo></kanganlogo>
+        <kanganlogo> </kanganlogo>
         <Typography
             variant= "h6"
             noWrap
@@ -72,21 +72,21 @@ function Layout() {
           >
 
           </Typography>
-        <Button variant="contained"><NavLink to="/all" element={<AllPeople />} style={{color: 'white'}} >
+        <Button className='Bigbtn'><NavLink to="/all" element={<AllPeople />} style={{color: 'white'}} >
             List all Contacts
           </NavLink></Button>
 
-          <Button variant="contained"><NavLink to="/findperson" element={<FindPerson />} style={{color: 'white'}} >
+          <Button className='Bigbtn'><NavLink to="/findperson" element={<FindPerson />} style={{color: 'white'}} >
             Find Contact
           </NavLink></Button>
           
-          <Button variant="contained"><NavLink to="/addperson" element={<Addperson />} style={{color: 'white'}} >
+          <Button className='Bigbtn'><NavLink to="/addperson" element={<Addperson />} style={{color: 'white'}} >
           Add Contact
         </NavLink></Button>
-        <Button variant="contained"><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
+        <Button className='Bigbtn'><NavLink to="/deletecontact" element={<Deletecontact />} style={{color: 'white'}} >
           Delete contact
         </NavLink></Button>
-        <Button variant="contained"><NavLink to="/updatecontact" element={<Updatecontact />} style={{color: 'white'}} >
+        <Button className='Bigbtn'><NavLink to="/updatecontact" element={<Updatecontact />} style={{color: 'white'}} >
           Update contact
         </NavLink></Button>
 
