@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import {
     Box,
@@ -9,9 +9,14 @@ import '../Edit-Contact.css';
 import '../App.css';
 
 
+//const [value, setValue] = useState();
+//
+//const valueChange = (e) => {
+//    setValue(e.target.value);
+//}
+
 function put(event) {
     //let detail = {id: this.state.id, name: this.state.name, contactnumber: this.state.contactNumber}
-    console.log(event)
     fetch('https://kanganphonebookapi.azurewebsites.net/contact', {
         method: "PUT",
         headers: {
@@ -22,6 +27,7 @@ function put(event) {
     })
         .then((result) => console.log(result))
     //.then((res) => this.setState({ editcontact: res }))
+    alert("Your contact has been updated")
 
 }
 
@@ -63,13 +69,8 @@ const listofcontacts =
                 </Button>>
 
                     <form class="PopupForm" id="Editform"
-                        onSubmit={function (e) {
+                        onChange={function (e) {
                             e.preventDefault();
-                            put({
-                                id: row.id,
-                                name: document.getElementById("name").value,
-                                contactNumber: document.getElementById("contactNumber").value
-                            })
                         }
                         } >
                         <p>
@@ -91,10 +92,16 @@ const listofcontacts =
                             </div>
                         </p>
 
-                        <button className="SubButton" type="submit" > Submit </button>
-                        <p>
-                            <input type="submit"></input>
-                        </p>
+                        <button
+                            class="SubButton"
+                            type="submit"
+                            onClick={(event) =>
+                                put({
+                                    id: row.id,
+                                    name: document.getElementById("name").value,
+                                    contactNumber: document.getElementById("contactNumber").value
+                                })}
+                        > Submit </button>
                     </form>
                 </Popup>,
         },
@@ -109,6 +116,7 @@ class Updatecontact extends React.Component {
         super(props);
         this.state = {
             foundresult: [],
+            resultValid: null,
         }
 
     }
@@ -127,6 +135,12 @@ class Updatecontact extends React.Component {
             //.then((ren) => console.log(ren));
             //.then(r => r.map((contact) => this.splitnames(contact)))
             .then((res) => this.setState({ foundresult: res }))
+        if (name === "") {
+            this.setState({ resultValid: false });
+        }
+        else {
+            this.setState({ resultValid: true });
+        }
         //.then = console.log(name);
         //Add name to searchTerm so we can search whatever user's inputs in database 
     }
@@ -204,10 +218,11 @@ class Updatecontact extends React.Component {
 
                     <div>
                         {
-                            this.state.foundresult.length === 0 ?
-                                <b></b> : this.state.foundresult.length === 0 ?
-                                    <b>Nothing has been found</b> :
-                                    this.DisplayDataGrid()
+                            this.state.resultValid === false ?
+                                <b>Put Any word</b> :
+                                this.state.resultValid === true ?
+                                    this.DisplayDataGrid() :
+                                    <b>Enter the name</b>
                         }
                     </div>
                 </div>

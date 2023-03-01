@@ -21,6 +21,7 @@ function put(event) {
     })
         .then((result) => console.log(result))
     //.then((res) => this.setState({ editcontact: res }))
+    alert("Your contact has been updated")
 
 }
 
@@ -48,11 +49,14 @@ const listofcontacts = [
         headerName: "Edit",
         sortable: false,
         renderCell: ({ row }) =>
-            <Popup trigger=<Button onClick={() => this.foundresult(row)} style={{ backgroundColor: 'lawngreen' }}>
+            <Popup trigger=<Button 
+            onClick={() => this.foundresult(row)} 
+            style={{ backgroundColor: 'lawngreen' }}>
                 Edit
             </Button>>
 
-                <form class="PopupForm" onSubmit={function (e) {
+                <form class="PopupForm" id="Editform"
+                onChange={function (e) {
                     e.preventDefault();
                 }}>
 
@@ -75,10 +79,14 @@ const listofcontacts = [
                         </div>
                     </p>
 
-                    <button class="SubButton" onClick={(event) =>
+                    <button 
+                    class="SubButton" 
+                    type="submit"  
+                    onClick={(event) =>
                         put({ id: row.id, 
                         name: document.getElementById("name").value, 
-                        contactNumber: document.getElementById("contactNumber").value })}> Submit </button>
+                        contactNumber: document.getElementById("contactNumber").value })}
+                        > Submit </button>
                 </form>
             </Popup>,
     },
@@ -90,6 +98,7 @@ class FindPerson extends React.Component {
         super(props);
         this.state = {
             foundresult: [],
+            resultValid: null,
         }
     }
     // 요기는 foundresult 라는 array를 만듦 이름이 중복 될수 있으니까 make foudresult Array for multiple results
@@ -107,10 +116,12 @@ class FindPerson extends React.Component {
             //.then((res) => console.log(res));
             .then((res) => this.setState({ foundresult: res }))
         //Add name to searchTerm so we can search whatever user's inputs in database 
-        if (name === "") {
-            alert('give me some clue to find contact')
+        if(name === "") {
+            this.setState({resultValid: false});
         }
-
+        else {
+            this.setState({resultValid: true});
+        }
     }
 
     DisplayDataGrid() {
@@ -145,9 +156,11 @@ class FindPerson extends React.Component {
 
                     <div>
                         {
-                            this.state.foundresult.length === 0 ?
-                                <b></b> :
-                                this.DisplayDataGrid()
+                             this.state.resultValid=== false? 
+                             <b>Put Any word</b>: 
+                                this.state.resultValid === true ?
+                                this.DisplayDataGrid() :
+                                <b>Enter the name</b>
                         }
                     </div>
                     <div>

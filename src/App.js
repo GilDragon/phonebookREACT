@@ -45,7 +45,7 @@ function Layout() {
             <header style={{ padding: 20, fontSize: 25 }} >
         <nav style={{  width: '100%', margin: '10px 0px 0px 10px', fontSize: 24}}>
         <AppBar position= "sticky" style={{
-          backgroundColor: 'crimson',
+          backgroundColor: '#13324a52',
          color: '#5470a0',
          opacity: 0.8,
          boxShadow: "revert-layer"

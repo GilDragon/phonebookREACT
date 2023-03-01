@@ -5,7 +5,8 @@ class Deletecontact extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Deletecontact: null
+            Deletecontact: null,
+            IdValid: null,
         }
     }
     //in deleteid function set Id for searching parameter called id
@@ -19,6 +20,11 @@ class Deletecontact extends React.Component {
         .then((result)=> result.json())
         //.then((res) => console.log(res))
             .then((res) => { console.log(res);  this.setState({ Deletecontact: res }) })
+        if (id === "") {
+            this.setState({IdValid: false});
+        } else if (id != ""){
+            this.setState({IdValid: true})
+        }
     }
 
     render() {
@@ -33,14 +39,12 @@ class Deletecontact extends React.Component {
                 <div id="result"
                 style={{color: 'brown', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
                     
-                <b>Enter the ID</b>
                 {
-                   this.state.Deletecontact === null ?
-                            <></> :
-                            this.state.Deletecontact.id === null ?
-                                // console.log("contact not found") :
-                                <div> Contact not found </div> :
-                                <div> Contact deleted </div>
+                   this.state.IdValid === false ?
+                            <>Enter the valid ID</> :
+                            this.state.IdValid === true ?
+                                <div> Contact deleted </div> :
+                                <div> Enter the ID </div>
                 }
                 </div>
                 </body>
