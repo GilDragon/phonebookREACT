@@ -56,9 +56,12 @@ class Addperson extends React.Component {
 
         return (
             <div className="Addperson">
+                <body>
                 <h4>Add person</h4>
-                    <b>Name:</b><input type="text" id="add-addName-inp" placeholder='ex) Harry Potter' autoComplete="Firstname Lastname"/>
-                    <b>Phone number:</b><input type="number" id="add-addNumber-inp" placeholder='0412345768'/>
+                    <b>Name:</b>
+                    <input type="text" id="add-addName-inp" placeholder='ex) Harry Potter' autoComplete="Firstname Lastname"/>
+                    <b>Phone number:</b>
+                    <input type="number" id="add-addNumber-inp" placeholder='0412345768'/>
                      
                 <button onClick={() => this.addperson()}>Add</button>
                 <div style={{padding: "10px", color: 'purple', fontWeight: 'bold'}}></div>
@@ -69,8 +72,11 @@ class Addperson extends React.Component {
                         <b style={{color: 'blueviolet'}}>A contact has been added</b>
 
                     }
+
                 </div>
+                </body>
             </div>
+
             
             // if the id-name and id-number goes into database successfully return new contact has been added
         )

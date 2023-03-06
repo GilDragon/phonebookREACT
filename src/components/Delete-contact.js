@@ -22,7 +22,7 @@ class Deletecontact extends React.Component {
             .then((res) => { console.log(res);  this.setState({ Deletecontact: res }) })
         if (id === "") {
             this.setState({IdValid: false});
-        } else if (id != ""){
+        } else if (id !== ""){
             this.setState({IdValid: true})
         }
     }
@@ -37,7 +37,7 @@ class Deletecontact extends React.Component {
                     <input type="number" id="id-inp" />
                 <button onClick={() => this.deleteid()}>Delete</button>
                 <div id="result"
-                style={{color: 'brown', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
+                style={{color:'#73d49b', padding: "10px", fontFamily: "sans-serif", fontSize: 24}}>
                     
                 {
                    this.state.IdValid === false ?

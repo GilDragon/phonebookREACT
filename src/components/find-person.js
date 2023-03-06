@@ -49,16 +49,16 @@ const listofcontacts = [
         headerName: "Edit",
         sortable: false,
         renderCell: ({ row }) =>
-            <Popup trigger=<Button 
-            onClick={() => this.foundresult(row)} 
-            style={{ backgroundColor: 'lawngreen' }}>
+            <Popup trigger=<Button
+                onClick={() => this.foundresult(row)}
+                style={{ backgroundColor: 'lawngreen' }}>
                 Edit
             </Button>>
 
                 <form class="PopupForm" id="Editform"
-                onChange={function (e) {
-                    e.preventDefault();
-                }}>
+                    onChange={function (e) {
+                        e.preventDefault();
+                    }}>
 
                     <p>
 
@@ -79,14 +79,16 @@ const listofcontacts = [
                         </div>
                     </p>
 
-                    <button 
-                    class="SubButton" 
-                    type="submit"  
-                    onClick={(event) =>
-                        put({ id: row.id, 
-                        name: document.getElementById("name").value, 
-                        contactNumber: document.getElementById("contactNumber").value })}
-                        > Submit </button>
+                    <button
+                        class="SubButton"
+                        type="submit"
+                        onClick={(event) =>
+                            put({
+                                id: row.id,
+                                name: document.getElementById("name").value,
+                                contactNumber: document.getElementById("contactNumber").value
+                            })}
+                    > Submit </button>
                 </form>
             </Popup>,
     },
@@ -116,17 +118,17 @@ class FindPerson extends React.Component {
             //.then((res) => console.log(res));
             .then((res) => this.setState({ foundresult: res }))
         //Add name to searchTerm so we can search whatever user's inputs in database 
-        if(name === "") {
-            this.setState({resultValid: false});
+        if (name === "") {
+            this.setState({ resultValid: false });
         }
         else {
-            this.setState({resultValid: true});
+            this.setState({ resultValid: true });
         }
     }
 
     DisplayDataGrid() {
         return (
-            <Box sx={{ height: 400, width: '100%' }}>
+            <Box sx={{ height: 400, width: '65.5%', display: 'flex' }}>
                 <DataGrid
                     initialState={{
                         sorting: {
@@ -137,6 +139,7 @@ class FindPerson extends React.Component {
                     columns={listofcontacts}
                     pageSize={5}
                     rowsPerPageOptions={[5]}
+                    editingMode="modal"
                     checkboxSelection
                     disableSelectionOnClick
                     experimentalFeatures={{ newEditingApi: true }}
@@ -149,24 +152,22 @@ class FindPerson extends React.Component {
 
         return (
             <div>
-                <h3>Find a person</h3>
-                <input type="text" id="searchTerm-inp" required placeholder='' />
-                <button onClick={() => this.findPerson()}>Find</button>
+                    <h3>Find a person</h3>
+                    <input type="text" id="searchTerm-inp" required placeholder='' />
+                    <button onClick={() => this.findPerson()}>Find</button>
                 <div className="FindPerson">
-
                     <div>
                         {
-                             this.state.resultValid=== false? 
-                             <b>Put Any word</b>: 
+                            this.state.resultValid === false ?
+                                <b>Enter Valid name</b> :
                                 this.state.resultValid === true ?
-                                this.DisplayDataGrid() :
-                                <b>Enter the name</b>
+                                    this.DisplayDataGrid() :
+                                    <b>Enter the name</b>
                         }
-                    </div>
-                    <div>
                     </div>
                 </div>
             </div>
+
 
         )
     }

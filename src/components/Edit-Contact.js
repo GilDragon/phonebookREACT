@@ -163,8 +163,8 @@ class Updatecontact extends React.Component {
 
         return (
 
-            <Box sx={{ height: 400, width: '100%', display: 'flex' }}>
-
+            <Box
+                sx={{ height: 400, width: '65.5%', display: 'flex' }}>
                 <DataGrid
                     initialState={{
                         sorting: {
@@ -175,7 +175,6 @@ class Updatecontact extends React.Component {
                     columns={listofcontacts}
                     pageSize={5}
                     rowsPerPageOptions={[5]}
-
                     editingMode="modal"
                     enableEditing
                     disableSelectionOnClick
@@ -210,16 +209,16 @@ class Updatecontact extends React.Component {
     render() {
         return (
             <div>
-                <h3>Find a person to edit</h3>
-                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)' required data-validation-required-message="Please enter name" />
-                <button onClick={() => this.findPerson()}>Find</button>
+                    <h3>Find a person to edit</h3>
+                    <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)'
+                        required data-validation-required-message="Please enter name" />
+                    <button onClick={() => this.findPerson()}>Find</button>
+
                 <div className="Updatecontact">
-
-
                     <div>
                         {
                             this.state.resultValid === false ?
-                                <b>Put Any word</b> :
+                                <b>Enter Valid name</b> :
                                 this.state.resultValid === true ?
                                     this.DisplayDataGrid() :
                                     <b>Enter the name</b>

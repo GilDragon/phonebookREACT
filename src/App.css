@@ -1,69 +1,65 @@
 
 .App {
   text-align: center;
-  background-color: white;
-
+  
 }
+
+div {
+  background: rgba(255, 255, 255, 0.144);
+}
+
+
 
 .Updatecontact {
-  background-image: url(./components/image/cremorne\ project.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
+
 }
 
-
 .Allpeople {
-  border: solid px;
-  background-image: url(./components/image/cremorne\ project.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
+
+}
+
+.tableforall {
+opacity: 0.6;
 }
 
 .FindPerson {
-  border: solid px;
-  background-image: url(./components/image/cremorne\ project.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .Addperson {
-  border: solid px;
-  background-image: url('./components/image/kangan.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
+
 }
 
 .Deletecontact {
   border: solid px;
-  background-image: url('./components/image/kangan.jpg');
+  background-image: url(./components/image/kanganLogoBoth.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 300px 100px;
+  opacity: 0.9;
 }
-
-div {
-
-  background: rgba(255, 255, 255, 0.144);
-
-}
-
-nav {
-  background-image: url('./components/image/kangan.jpg');
+body {
+  background-image: url('./components/image/cremorneproject.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: top;
-  background-position: left;
-  display: block;
-  
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
 }
-
-kanganlogo {
+.headerbackground {
   background-image: url('./components/image/kangan.jpg');
   background-repeat: no-repeat;
   background-position: top;
   background-position: left;
   display: block;
-  background-size: auto;
+}
+nav12345 {
+  background-image: url('./components/image/kangan.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: left;
+  display: block;
 
-  
 }
 
 .PopupForm {

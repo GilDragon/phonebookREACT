@@ -52,8 +52,10 @@ class AllPeople extends React.Component {
     // in rows get the value from GetAllpeople function, in columns get listofcontacts array
     DisplayDataGrid() {
         return (
-            <Box sx={{ height: 631, width: '100%' }}>
-                <DataGrid
+            <Box 
+            sx={{ height: 631, width: '100%' }}
+            className='Datagrid'>
+                <DataGrid className='tableforall'
                     rows={this.state.people}
                     columns={listofcontacts}
                     pageSize={10}
