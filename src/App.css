@@ -9,7 +9,7 @@ div {
 }
 
 header {
-  border-style: none;
+  border-style: none 10px;
 }
 
 .Updatecontact {
