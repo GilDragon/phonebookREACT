@@ -164,7 +164,7 @@ class Updatecontact extends React.Component {
         return (
 
             <Box
-                sx={{ height: 400, width: '65.5%', display: 'flex' }}>
+                sx={{ height: 400, width: '80%', display: 'flex' }}>
                 <DataGrid
                     initialState={{
                         sorting: {

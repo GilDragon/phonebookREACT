@@ -128,7 +128,7 @@ class FindPerson extends React.Component {
 
     DisplayDataGrid() {
         return (
-            <Box sx={{ height: 400, width: '65.5%', display: 'flex' }}>
+            <Box sx={{ height: 400, width: '80%', display: 'flex' }}>
                 <DataGrid
                     initialState={{
                         sorting: {

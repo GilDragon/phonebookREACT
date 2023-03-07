@@ -57,10 +57,10 @@ class Addperson extends React.Component {
         return (
             <div className="Addperson">
                 <body>
-                <h4>Add person</h4>
-                    <b>Name:</b>
+                <h4 style={{color: '#00ffaf'}}>Add person</h4>
+                    <b style={{color: '#00ffaf'}}>Name:</b>
                     <input type="text" id="add-addName-inp" placeholder='ex) Harry Potter' autoComplete="Firstname Lastname"/>
-                    <b>Phone number:</b>
+                    <b style={{color: '#00ffaf'}}>Phone number:</b>
                     <input type="number" id="add-addNumber-inp" placeholder='0412345768'/>
                      
                 <button onClick={() => this.addperson()}>Add</button>

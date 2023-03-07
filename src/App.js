@@ -10,13 +10,15 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import KanganLogo from './components/image/kangan.jpg';
+import KanganLogo from './components/image/kangan-logo.png';
 import { style } from '@mui/system';
+import { useMediaQuery } from 'react-responsive';
 
 // import all the things above from those directories so that I can use it in App.js
 
 //when App is performed return inside ()
 function App() {
+  
   return (
     // if I access with / Layout function is shown on first page and Shows AllPeople
     // access with /all then performs AllPeople componentfrom above
@@ -46,22 +48,22 @@ function Layout() {
       <img src={KanganLogo}
                 style={{
                   position: 'absolute', 
-                  left: 0, 
+                  left: 50, 
                   right: 0, 
                   bottom: 0,
-                  top: -40,
+                  top: 25,
                   zIndex:0,
-                opacity:0.5,
+                opacity:1,
                 }}
                 alt='KanganLogo' />
-      <header style={{ padding: 20, fontSize: 25 }} >
+      <header style={{ padding: 20, fontSize: 25, }} >
         <nav
-          style={{ width: '100%', margin: '10px 0px 0px 10px', fontSize: 24 }}>
+          style={{ width: '100%', margin: '10px 0px 0px 10px', fontSize: 24}}>
           <AppBar position="sticky" style={{
             backgroundColor: '#13324a52',
             color: '#5470a0',
             opacity: 0.8,
-            boxShadow: "revert-layer"
+            boxShadow: 'none',
           }}>
             <Container maxWidth="lg">
               <h1 style={{ color: '#e0b429' }}>

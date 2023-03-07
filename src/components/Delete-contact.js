@@ -33,7 +33,7 @@ class Deletecontact extends React.Component {
         return (
             <div className="Deletecontact">
                 <body>
-                <h4>Delete a contact</h4>
+                <h4 style={{color: '#00ffaf'}}>Delete a contact</h4>
                     <input type="number" id="id-inp" />
                 <button onClick={() => this.deleteid()}>Delete</button>
                 <div id="result"
