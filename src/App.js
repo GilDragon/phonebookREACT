@@ -18,7 +18,7 @@ import { useMediaQuery } from 'react-responsive';
 
 //when App is performed return inside ()
 function App() {
-  
+
   return (
     // if I access with / Layout function is shown on first page and Shows AllPeople
     // access with /all then performs AllPeople componentfrom above
@@ -46,70 +46,72 @@ function Layout() {
   return (
     <div className="App">
       <img src={KanganLogo}
-                style={{
-                  position: 'absolute', 
-                  left: 50, 
-                  right: 0, 
-                  bottom: 0,
-                  top: 25,
-                  zIndex:0,
-                opacity:1,
-                }}
-                alt='KanganLogo' />
-      <header style={{ padding: 20, fontSize: 25, }} >
-        <nav
-          style={{ width: '100%', margin: '10px 0px 0px 10px', fontSize: 24}}>
-          <AppBar position="sticky" style={{
-            backgroundColor: '#13324a52',
-            color: '#5470a0',
-            opacity: 0.8,
-            boxShadow: 'none',
-          }}>
-            <Container maxWidth="lg">
-              <h1 style={{ color: '#e0b429' }}>
-                PhoneBook
-              </h1>
+        style={{
+          position: 'absolute',
+          left: 50,
+          right: 0,
+          bottom: 0,
+          top: 25,
+          zIndex: 0,
+          opacity: 1,
+        }}
+        alt='KanganLogo' />
+      <div className='container'>
+        <header style={{ padding: 20, fontSize: 25, }} >
+          <nav
+            style={{ width: '100%', margin: '10px 0px 0px 10px', fontSize: 24 }}>
+            <AppBar position="sticky" style={{
+              backgroundColor: '#13324a52',
+              color: '#5470a0',
+              opacity: 0.8,
+              boxShadow: 'none',
+            }}>
+              <Container maxWidth="lg">
+                <h1 style={{ color: '#e0b429' }}>
+                  PhoneBook
+                </h1>
 
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'khaki',
-                  textDecoration: 'none',
-                }}
-              >
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="a"
+                  href="/"
+                  sx={{
+                    mr: 2,
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'khaki',
+                    textDecoration: 'none',
+                  }}
+                >
 
-              </Typography>
-              <Button className='Bigbtn'><NavLink to="/all" element={<AllPeople />} style={{ color: 'white' }} >
-                List all Contacts
-              </NavLink></Button>
+                </Typography>
+                <Button className='Bigbtn'><NavLink to="/all" element={<AllPeople />} style={{ color: 'white' }} >
+                  List all Contacts
+                </NavLink></Button>
 
-              <Button className='Bigbtn'><NavLink to="/findperson" element={<FindPerson />} style={{ color: 'white' }} >
-                Find Contact
-              </NavLink></Button>
+                <Button className='Bigbtn'><NavLink to="/findperson" element={<FindPerson />} style={{ color: 'white' }} >
+                  Find Contact
+                </NavLink></Button>
 
-              <Button className='Bigbtn'><NavLink to="/addperson" element={<Addperson />} style={{ color: 'white' }} >
-                Add Contact
-              </NavLink></Button>
-              <Button className='Bigbtn'><NavLink to="/deletecontact" element={<Deletecontact />} style={{ color: 'white' }} >
-                Delete contact
-              </NavLink></Button>
-              <Button className='Bigbtn'><NavLink to="/updatecontact" element={<Updatecontact />} style={{ color: 'white' }} >
-                Update contact
-              </NavLink></Button>
+                <Button className='Bigbtn'><NavLink to="/addperson" element={<Addperson />} style={{ color: 'white' }} >
+                  Add Contact
+                </NavLink></Button>
+                <Button className='Bigbtn'><NavLink to="/deletecontact" element={<Deletecontact />} style={{ color: 'white' }} >
+                  Delete contact
+                </NavLink></Button>
+                <Button className='Bigbtn'><NavLink to="/updatecontact" element={<Updatecontact />} style={{ color: 'white' }} >
+                  Update contact
+                </NavLink></Button>
 
-            </Container>
-          </AppBar>
-        </nav>
+              </Container>
+            </AppBar>
+          </nav>
 
-      </header>
+        </header>
+      </div>
       <main>
         <Outlet />
       </main>

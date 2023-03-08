@@ -9,26 +9,13 @@ div {
 }
 
 header {
-  border-style: none 10px;
+  border-style: none;
 }
 
-.Updatecontact {
 
-}
-
-.Allpeople {
-
-}
 
 .tableforall {
 opacity: 0.6;
-}
-
-.FindPerson {
-}
-
-.Addperson {
-
 }
 
 .Deletecontact {
