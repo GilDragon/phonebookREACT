@@ -188,24 +188,7 @@ class Updatecontact extends React.Component {
 
         )
     }
-    //updateContact() {
-    //    let item = {id,name,contactnumber}
-    //    fetch("https://kanganphonebookapi.azurewebsites.net/contact?", {
-    //        method: 'PUT',
-    //        headers: {
-    //            'Accept': 'application/json',
-    //            'Content-Type': 'application/json'
-    //        },
-    //        body: JSON.stringify(item)
-    //        })
-    //        .then((result) => result.json())
-    //        //.then((res)=> res !== null? this.setState({foundperson: res}) : {id: "Not Found ", name: "NOT FOUND", contactNumber: "NOT FOUND"}) //set
-    //        //.then((ren) => console.log(ren));
-    //        //.then(r => r.map((contact) => this.splitnames(contact)))
-    //        .then((res) => this.setState({ editnew: res }))
-    //}
     //returning the result of the contact 
-
     render() {
         return (
             <div>
