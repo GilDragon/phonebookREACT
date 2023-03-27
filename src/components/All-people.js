@@ -95,7 +95,7 @@ class AllPeople extends React.Component {
 
         return (
             <div>
-                <h2>All Contacts</h2>
+                <h2>All of Contacts</h2>
                 <div className="Allpeople">
 
                     {/* <button onClick={() => this.GetAllPeople()}>Get All</button>
