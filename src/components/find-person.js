@@ -32,10 +32,18 @@ const listofcontacts = [
         width: 90
     },
     {
-        field: 'name',
-        headerName: 'Name',
+        field: 'firstName',
+        headerName: 'First Name',
         width: 150,
         editable: true,
+        headerAlign: 'center',
+    },    
+    {
+        field: 'lastName',
+        headerName: 'Last Name',
+        width: 150,
+        editable: true,
+        headerAlign: 'center',
     },
     {
         field: 'contactNumber',

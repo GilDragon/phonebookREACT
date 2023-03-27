@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import {
     Box,
@@ -44,10 +44,18 @@ const listofcontacts =
             editable: false,
         },
         {
-            field: 'name',
-            headerName: 'Name',
+            field: 'firstName',
+            headerName: 'First Name',
             width: 150,
             editable: true,
+            headerAlign: 'center',
+        },    
+        {
+            field: 'lastName',
+            headerName: 'Last Name',
+            width: 150,
+            editable: true,
+            headerAlign: 'center',
         },
         {
             field: 'contactNumber',
@@ -144,6 +152,7 @@ class Updatecontact extends React.Component {
         //.then = console.log(name);
         //Add name to searchTerm so we can search whatever user's inputs in database 
     }
+
     // set lastname as name from foundresult and after space set firstname as name from same place but before space
     //splitnames(foundresult) {
     //    const lastname = foundresult.name.slice(foundresult.name.indexOf(' ') + 1);

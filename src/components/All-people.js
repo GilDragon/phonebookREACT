@@ -4,11 +4,23 @@ import Box from '@mui/material/Box';
 import '../App.css';
 
 // make listofcontacts array which has id, name and contactnumber field
+
 const listofcontacts = [
-    { field: 'id', headerName: 'ID', width: 90, headerAlign: 'center', },
+    {   field: 'id', 
+        headerName: 'ID', 
+        width: 90, 
+        headerAlign: 'center',
+    },
     {
-        field: 'name',
-        headerName: 'Name',
+        field: 'firstName',
+        headerName: 'First Name',
+        width: 150,
+        editable: true,
+        headerAlign: 'center',
+    },    
+    {
+        field: 'lastName',
+        headerName: 'Last Name',
         width: 150,
         editable: true,
         headerAlign: 'center',
@@ -22,6 +34,10 @@ const listofcontacts = [
         headerAlign: 'center',
     },
 ];
+function concatNames(listofcontacts) {
+    let Rname = listofcontacts.firstName.concat(" ", listofcontacts.lastName);
+    console.log(Rname)
+}
 
 //make AllPeople component 
 //consturctor makes state people and listofcontacts value which are null and empty array 
@@ -30,7 +46,6 @@ class AllPeople extends React.Component {
         super(props);
         this.state = {
             people: null,
-            listofcontacts: [],
         }
     }
     //performs getallPeople
@@ -46,10 +61,13 @@ class AllPeople extends React.Component {
             //.then((res) => res !== null ? this.setState({ people: res }) : this.setState({ people: null }))
             .then((res) => this.setState({ people: res }))
         // then set the people from constructor as  
-
+    
     }
     //make Displaydatagrid function which can make the datagrid. table this.state.people is a row and columns are listofcontacts
     // in rows get the value from GetAllpeople function, in columns get listofcontacts array
+    concatNames(listofcontacts) {
+        let Rname = listofcontacts.firstName.concat(" ", listofcontacts.lastName);
+    }
     DisplayDataGrid() {
         return (
             <Box 
@@ -68,8 +86,8 @@ class AllPeople extends React.Component {
         )
     }
     // make rederPerson function which returns id name, contactnumber and key
-    renderPerson(id, name, contactNumber) {
-        return <Person id={id} name={name} contactNumber={contactNumber} key={id} />
+    renderPerson(id, firstName, lastName, contactNumber) {
+        return <Person id={id} name={firstName + lastName} contactNumber={contactNumber} key={id} />
     }
 
     //this Allpeople component render if people is not null then shows DisplayDatagrid
@@ -98,7 +116,7 @@ class AllPeople extends React.Component {
 }
 class Person extends React.Component {
     render() {
-        return <li> {this.props.id} {this.props.name} {this.props.contactNumber} </li>
+        return <li> {this.props.id} {this.props.firstName} {this.props.lastName} {this.props.contactNumber} </li>
     }
 }
 
