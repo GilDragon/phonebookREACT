@@ -111,8 +111,6 @@ class FindPerson extends React.Component {
             resultValid: null,
         }
     }
-    // 요기는 foundresult 라는 array를 만듦 이름이 중복 될수 있으니까 make foudresult Array for multiple results
-
 
     // when findPerson function is operated, get a Id from "searchTerm-inp" 
     //fetch to below url then send a searchTerm which I set as name then get a result then foundresult will be set again
