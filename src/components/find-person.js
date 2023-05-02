@@ -77,8 +77,11 @@ const listofcontacts = [
 
                     </p>
                     <p>
-                        Name:
-                        <input id="name" type="text" name="Name" defaultValue={(row.name)} />
+                        First Name:
+                        <input id="name" type="text" name="Name" defaultValue={(row.firstName)} />
+                    </p>                    <p>
+                        Last Name:
+                        <input id="name" type="text" name="Name" defaultValue={(row.lastName)} />
                     </p>
                     <p>
                         <div>
@@ -93,7 +96,8 @@ const listofcontacts = [
                         onClick={(event) =>
                             put({
                                 id: row.id,
-                                name: document.getElementById("name").value,
+                                firstName: document.getElementById("firstName").value,
+                                lastName: document.getElementById("lastName").value,
                                 contactNumber: document.getElementById("contactNumber").value
                             })}
                     > Submit </button>

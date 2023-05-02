@@ -49,7 +49,7 @@ const listofcontacts =
             width: 150,
             editable: true,
             headerAlign: 'center',
-        },    
+        },
         {
             field: 'lastName',
             headerName: 'Last Name',
@@ -90,8 +90,11 @@ const listofcontacts =
 
                         </p>
                         <p>
-                            Name:
-                            <input id="name" type="text" name="Name" defaultValue={(row.name)} />
+                            First Name:
+                            <input id="name" type="text" name="Name" defaultValue={(row.firstName)} />
+                        </p>                    <p>
+                            Last Name:
+                            <input id="name" type="text" name="Name" defaultValue={(row.lastName)} />
                         </p>
                         <p>
                             <div>
@@ -106,7 +109,8 @@ const listofcontacts =
                             onClick={(event) =>
                                 put({
                                     id: row.id,
-                                    name: document.getElementById("name").value,
+                                    firstName: document.getElementById("firstName").value,
+                                    lastName: document.getElementById("lastName").value,
                                     contactNumber: document.getElementById("contactNumber").value
                                 })}
                         > Submit </button>
@@ -201,10 +205,10 @@ class Updatecontact extends React.Component {
     render() {
         return (
             <div>
-                    <h3>Find a person to edit</h3>
-                    <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)'
-                        required data-validation-required-message="Please enter name" />
-                    <button onClick={() => this.findPerson()}>Find</button>
+                <h3>Find a person to edit</h3>
+                <input type="text" id="searchTerm-inp" placeholder='Ex(Harry Potter)'
+                    required data-validation-required-message="Please enter name" />
+                <button onClick={() => this.findPerson()}>Find</button>
 
                 <div className="Updatecontact">
                     <div>
